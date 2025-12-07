@@ -272,7 +272,7 @@ $hnt_previewer = 'xdg-open %O %S';;
 # $lualatex = "lualatex %O %S";
 
 # Default switches to pass to the lualatex program
-# $lualatex_default_switches = '';
+$lualatex_default_switches = '-synctex=1 -interaction=nonstopmode';
 
 # The command line switch to make lualatex run in silent mode
 # $lualatex_silent_switch = '-interaction=batchmode';

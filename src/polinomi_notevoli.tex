@@ -1,7 +1,95 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 12pt]{scrartcl}
 
+\usepackage[italian]{babel}
 \usepackage{amsmath, amssymb, amsfonts}
 
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\usepackage{hyperref}
+
+\usepackage{fontspec}
+\usepackage[usefilenames]{plex-otf}
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchUppercase]{Asana Math}
+
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    textfont=it,
+    margin=10pt,
+    format=plain
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+
+\author{Stefano Pilosio}
+\title{Appunti di Algebra}
+\date{\today}
+
 \begin{document}
-\section*{Polinomi Notevoli}
+
+\maketitle
+\tableofcontents
+
+\section{Polinomi Notevoli}
+\begin{table}[h!]
+\centering
+\caption{Polinomi notevoli}
+\begin{tabular}{ccc}
+    \toprule
+    \textbf{Nome} & \textbf{Espressione} & \textbf{Scomposizione} \\
+    \midrule
+    Quadrato di un binomio & $ a^2 + 2ab + b^2$ & $(a + b)^2$ \\
+    Quadrato di un trinomio & $a^2 + b^2 + c^2 + 2ab + 2ac + 2bc$ & $(a + b + c)^2$ \\
+    Cubo di un binomio & $a^3 + 3a^2b + 3ab^2 + b^3$ & $(a + b)^3$ \\
+    Somma per differenza & $a^2 - b^2$ & $(a + b)(a - b)$ \\ 
+    Somma di cubi & $a^3 + b^3$ & $(a + b)(a^2 - ab + b^2)$ \\ 
+    Differenza di cubi & $a^3 - b^3$ & $(a - b)(a^2 + ab + b^2)$ \\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+\section{Regola di Ruffini}
+La regola di Ruffini è un metodo rapido per eseguire la divisione di un polinomio \( P(x) \) per un binomio della forma \( (x - x_0) \), dove \( x_0 \) è una radice del polinomio.
+
+\subsection*{Procedura}
+\begin{enumerate}
+    \item Scrivi i coefficienti del polinomio \( P(x) \) in ordine decrescente rispetto ai gradi. Se mancano termini, inserisci uno zero come coefficiente.
+    \item Scrivi il valore di \( x_0 \) (la radice) a sinistra di una linea verticale.
+    \item Riporta il primo coefficiente sotto la linea orizzontale.
+    \item Moltiplica il valore sotto la linea per \( x_0 \) e scrivi il risultato sotto il coefficiente successivo.
+    \item Somma i valori nella colonna e scrivi il risultato sotto la linea.
+    \item Ripeti i passaggi 4 e 5 fino a completare tutti i coefficienti.
+\end{enumerate}
+
+\subsection*{Risultato}
+Alla fine:
+\begin{itemize}
+    \item I numeri sotto la linea rappresentano i coefficienti del quoziente.
+    \item L'ultimo numero a destra è il resto della divisione.
+\end{itemize}
+
+\subsection*{Esempio}
+Dividiamo \( P(x) = 2x^3 + 3x^2 - 5x + 6 \) per \( x - 2 \):
+\[
+\begin{array}{r|rrr|r}
+   & 2 & 3 & -5 & 6 \\
+2  &   & 4 & 14 & 18 \\
+\hline
+  & 2 & 7 & 9  & 24 \\
+\end{array}
+\]
+Il quoziente è \( 2x^2 + 7x + 9 \) e il resto è \( 24 \).
+
 \end{document}
